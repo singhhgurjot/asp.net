@@ -1,0 +1,77 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://img.freepik.com/free-photo/flowers-notebook-near-laptop_23-2147759307.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+        }
+
+        .overlay {
+            margin-top:10%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .jumbotron {
+          background:transparent;
+            padding: 50px;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+            .jumbotron h1 {
+                font-size: 3rem;
+                margin-bottom: 20px;
+            }
+
+            .jumbotron p {
+                font-size: 1.2rem;
+                margin-bottom: 30px;
+            }
+
+        .btn-get-started {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+            .btn-get-started:hover {
+                background-color: #0056b3;
+            }
+    </style>
+</head>
+
+<body>
+
+    <div class="overlay">
+        <div class="jumbotron">
+            <h1>Welcome to Scribble Sphere</h1>
+            <p class="font-italic font-weight-bold">Welcome to Scribble Sphere, a vibrant community where ideas meet words and creativity knows no bounds. Whether you're a seasoned writer, a budding poet, or a deep thinker, Scribble Sphere is your platform to express, share, and explore. Join our diverse community of writers, poets, and thinkers as we embark on a journey of creativity and inspiration. Let your words take flight and make an impact in our world of limitless imagination. Join us today and be part of something truly special.</p>
+            <a href="/register/create" class="btn btn-get-started">Get Started</a>
+        </div>
+    </div>
+
+</body>
+
+</html>

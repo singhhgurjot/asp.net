@@ -1,0 +1,36 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+.registerForm {
+    width: 500px;
+    
+    max-width: 400px; /* Set maximum width of the form */
+    margin: auto; /* Center the form horizontally */
+    padding: 20px; /* Add some padding for spacing */
+    margin-top: 50px; /* Add top margin for spacing */
+    background-color: rgba(255, 255, 255, 0.2); /* Set background color with transparency */
+    backdrop-filter: blur(10px); /* Apply a blur effect to the background */
+    border-radius: 10px; /* Add border radius for rounded corners */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Add a shadow effect */
+}
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+.regButton{
+    margin-top:20px;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
