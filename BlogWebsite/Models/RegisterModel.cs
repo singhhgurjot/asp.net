@@ -24,6 +24,6 @@ namespace BlogWebsite.Models
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         [DataType(DataType.Password)]
         public string? ConfirmPassword { get; set; }
-        public List<BlogModel> Blogs { get; set; }
+    
     }
 }

@@ -2,18 +2,38 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
+    Layout = "~/Views/Shared/insideLayout.cshtml";
 }
-<div class="container">
+@model BlogWebsite.Models.BlogModel;
+<div class="container writeForm">
     <h2 class="font-italic">Write a New Blog</h2>
     <form asp-action="Write" method="post">
-        <div class="form-group">
-            <label for="title">Title:</label>
-            <input type="text" class="form-control" id="title" name="Title" required>
+        <div class="form-group ">
+            <label for="title font-weight-bold" style="font-weight:bold" asp-for="Title">Title:</label>
+            <input type="text" class="form-control" id="title" name="Title" asp-for="Title" required>
+            <span asp-validation-for="Title" class="text-danger"></span>
         </div>
         <div class="form-group">
-            <label for="content">Content:</label>
-            <textarea class="form-control" id="content" name="Content" rows="6" required></textarea>
+            <label for="content" asp-for="Content" style=" font-weight:bold">Content:</label>
+            <textarea class="form-control content" id="content" name="Content" rows="6" asp-for="Content" required></textarea>
+            <span asp-validation-for="Content" class="text-danger"></span>
         </div>
-        <button type="submit" class="btn btn-primary">Publish</button>
+        <input type="hidden" id="userId" name="UserId" value="" asp-for="UserId" />
+        <button type="submit" class="btn btn-primary" style="margin-top:10px">Publish</button>
     </form>
 </div>
+@{
+    TempData.Keep("id");
+}
+@if (TempData["Message"] != null)
+{
+    <script>
+        alert('@TempData["Message"]');
+    </script>
+}
+@section Scripts{
+    <script>
+        document.getElementById('userId').value = @TempData["id"];
+ 
+</script>
+}

@@ -26,8 +26,10 @@ namespace BlogWebsite.Controllers
                 if (user != null)
                 {
                     // User found, redirect to home or dashboard
-                
-                    return RedirectToAction("Index", "Home");
+                    Console.WriteLine(user.Id);
+                    HttpContext.Session.SetInt32("id", user.Id);
+                    TempData["id"] = user.Id;
+                    return RedirectToAction("Index", "Dashboard");
                 }
                 else
                 {

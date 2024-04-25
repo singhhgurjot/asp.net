@@ -1,0 +1,90 @@
+﻿
+@{
+    Layout = "~/Views/Shared/insideLayout.cshtml";
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        .viewBlogOuter {
+            padding: 20px;
+        }
+
+        .card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+            margin-bottom: 20px;
+        }
+
+            .card:hover {
+                box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+            }
+
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .card-text {
+            color: #333;
+        }
+
+        .card-footer {
+            background-color: #f8f9fa;
+            border-top: 1px solid #ccc;
+            padding: 10px;
+            text-align: right;
+        }
+
+        .text-muted {
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+   
+        <div class="container mt-5">
+            <div class="row">
+                @foreach (var blog in Model)
+                {       
+                    
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">@blog.Title</h5>
+                                <p class="card-text">@blog.Content</p>
+                            </div>
+                            <div class="card-footer d-flex flex-row justify-content-between">
+                            <a href="@Url.Action("Detail", "View", new { id = blog.Id })" class="btn btn-primary">View Details</a>
+                                <form asp-action="Delete" asp-controller="View" method="post">
+                                    <input type="hidden" name="id" value="@blog.Id" />
+                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    
+                }
+            </div>
+        </div>
+  
+</body>
+</html>
+
+@{
+    TempData.Keep("id");
+}

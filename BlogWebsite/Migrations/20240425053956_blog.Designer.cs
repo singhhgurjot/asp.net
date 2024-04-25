@@ -3,6 +3,7 @@ using BlogWebsite.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BlogWebsite.Migrations
 {
     [DbContext(typeof(BlogWebsiteContext))]
-    partial class BlogWebsiteContextModelSnapshot : ModelSnapshot
+    [Migration("20240425053956_blog")]
+    partial class blog
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -41,6 +44,8 @@ namespace BlogWebsite.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("BlogModel");
                 });
@@ -74,6 +79,22 @@ namespace BlogWebsite.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("RegisterModel");
+                });
+
+            modelBuilder.Entity("BlogWebsite.Models.BlogModel", b =>
+                {
+                    b.HasOne("BlogWebsite.Models.RegisterModel", "User")
+                        .WithMany("Blogs")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("BlogWebsite.Models.RegisterModel", b =>
+                {
+                    b.Navigation("Blogs");
                 });
 #pragma warning restore 612, 618
         }

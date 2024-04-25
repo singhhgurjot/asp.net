@@ -261,3 +261,4 @@ D:\Lectures\SEM-6\DotNet\BlogWebsite\BlogWebsite\bin\Debug\net8.0\runtimes\win\l
 D:\Lectures\SEM-6\DotNet\BlogWebsite\BlogWebsite\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Windows.Extensions.dll
 D:\Lectures\SEM-6\DotNet\BlogWebsite\BlogWebsite\obj\Debug\net8.0\BlogWebsite.csproj.AssemblyReference.cache
 D:\Lectures\SEM-6\DotNet\BlogWebsite\BlogWebsite\obj\Debug\net8.0\BlogWebsite.csproj.CopyComplete
+D:\Lectures\SEM-6\DotNet\BlogWebsite\BlogWebsite\obj\Debug\net8.0\BlogWebsite.sourcelink.json

@@ -15,13 +15,7 @@ namespace BlogWebsite.Data
         }
 
         public DbSet<BlogWebsite.Models.RegisterModel> RegisterModel { get; set; } = default!;
-        public DbSet<BlogModel> BlogModel { get; set; } = default!;
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<BlogModel>()
-                .HasOne(b => b.User)
-                .WithMany(u => u.Blogs)
-                .HasForeignKey(b => b.UserId);
-        }
+        public DbSet<BlogWebsite.Models.BlogModel> BlogModel { get; set; } = default!;
+       
     }
 }
